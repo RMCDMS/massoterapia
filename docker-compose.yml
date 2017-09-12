@@ -16,7 +16,7 @@ services:
         - MYSQL_USER=root
         - MYSQL_PASSWORD=root
       ports:
-        - "33060:3360"
+        - "33060:3306"
 
     webserver:
       image: nginx:alpine
@@ -35,3 +35,5 @@ services:
       volumes:
         - ./src:/application
         - ./infra/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
+      external_links:
+        - "massoterapia-mysql"
