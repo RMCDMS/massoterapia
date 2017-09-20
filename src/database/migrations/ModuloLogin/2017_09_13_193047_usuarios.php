@@ -19,10 +19,10 @@ class Usuarios extends Migration
             $table->increments('usuarios_id');
             $table->string('usu_nome');
             $table->string('usu_sexo');
-            $table->string('usu_email')->nullable();
+            $table->string('usu_email');
             $table->date('usu_data_nascimento');
             $table->string('usu_cpf');
-            $table->string('senha');
+            $table->string('usu_senha');
             $table->timestamps();
             $table->softDeletes();
 //            $table->unsignedInteger('cod_perfis');

@@ -5,7 +5,7 @@ namespace Massoterapia\ModuloLogin\Usuarios\Models;
 
 use \Illuminate\Database\Eloquent\Model;
 
-class perfisModel extends Model
+class PerfisModel extends Model
 {
     protected $table = 'perfis';
 
