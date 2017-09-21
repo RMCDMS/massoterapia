@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 
 class AutenticacaoController extends Controller
 {
-    public function authenticate(Request $request)
+    public function login()
     {
-        $credencial = $request->only('usu_email');
 
-        
     }
+
 
 }

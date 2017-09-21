@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => usuariosModel::class,
+            'model' => \Massoterapia\ModuloLogin\Usuarios\Models\UsuariosModel::class,
         ]
 
 //        ,'users' => [

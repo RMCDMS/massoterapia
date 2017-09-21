@@ -28,5 +28,16 @@ class UsuariosTest extends TestCase
         dd($find);
     }
 
+    /**
+     * @group usuariosAll
+     */
+    public function testTrazendoTodosOsDados()
+    {
+        $this->criarObjeto();
+
+        $busca = $this->negocio->all();
+
+//        dd($busca);
+    }
 
 }
