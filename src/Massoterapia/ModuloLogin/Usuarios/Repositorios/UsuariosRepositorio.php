@@ -3,17 +3,15 @@ declare(strict_types=1);
 
 namespace Massoterapia\ModuloLogin\Usuarios\Repositorios;
 
-use Illuminate\Database\Eloquent\Model;
 use Massoterapia\ModuloLogin\Usuarios\Models\UsuariosModel;
 
-class usuariosRepositorio extends UsuariosModel
+class UsuariosRepositorio
 {
-    protected $model;
+    protected $model; 
 
     public function __construct(UsuariosModel $model)
     {
         $this->model = $model;
-//        parent::$model;
     }
 
     public function find($id)
@@ -54,5 +52,11 @@ class usuariosRepositorio extends UsuariosModel
         $dados = $this->model->select($campos)->get();
 
         return $dados;
+    }
+
+    public function save(array $input = [])
+    {
+        return parent::save($input);
+
     }
 }

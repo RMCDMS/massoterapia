@@ -23,6 +23,8 @@ class UsuariosModel extends Authenticatable
         'usu_data_nascimento',
         'usu_cpf',
         'usu_senha',
+        'created_at',
+        'updated_at'
     ];
 
     protected $dates = ['deleted_at'];

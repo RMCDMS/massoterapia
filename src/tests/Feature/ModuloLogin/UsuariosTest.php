@@ -7,11 +7,15 @@ use Tests\TestCase;
 
 class UsuariosTest extends TestCase
 {
+
+    /**
+     * @var Usuarios
+     */
     protected $negocio;
 
     public function criarObjeto()
     {
-        $this->negocio = new usuarios(new UsuariosRepositorio(new UsuariosModel()));
+        $this->negocio = new Usuarios(new UsuariosRepositorio(new UsuariosModel()));
     }
 
     /**
@@ -25,7 +29,9 @@ class UsuariosTest extends TestCase
 
         $find = $this->negocio->find($id);
 
-        dd($find);
+        $this->assertInternalType('array', $find);
+        $this->assertNotEmpty($find);
+        $this->assertNotNull($find);
     }
 
     /**
@@ -35,9 +41,30 @@ class UsuariosTest extends TestCase
     {
         $this->criarObjeto();
 
-        $busca = $this->negocio->all();
+        $all = $this->negocio->all();
 
-//        dd($busca);
+        $this->assertInternalType('array', $all);
+        $this->assertNotEmpty($all);
+        $this->assertNotNull($all);
+    }
+
+    /**
+     * @group usuariosSave
+     */
+    public function testSalvandoDadosDoUsuario()
+    {
+        $this->criarObjeto();
+
+        $input= [
+            'nome' => "Jeremias GG",
+            'sexo' => 'm',
+            'email' => 'jeremias@email.com',
+            'dataNascimento' => '1990-04-22',
+            'cpf' => '04527450557',
+            'senha' => '123456'
+        ];
+
+        $this->negocio->save($input);
     }
 
 }
